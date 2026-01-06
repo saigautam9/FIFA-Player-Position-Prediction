@@ -20,7 +20,7 @@ The system includes:
 - Includes feature engineering and class balancing techniques.
 
 ### Web-Based Deployment
-- Flask web app for real-time player position prediction.
+- Flask web application for real-time player position prediction.
 
 ### Android Integration
 - Android UI enables predictions directly from mobile devices via Flask API.
@@ -30,8 +30,8 @@ The system includes:
 ## Technologies Used
 
 ### Machine Learning
-- Python
-- PySpark
+- Python  
+- PySpark  
 - Random Forest Classifier (Scikit-learn)
 
 ### Backend
@@ -41,12 +41,11 @@ The system includes:
 - Android (Java/Kotlin)
 - HTML/CSS (Web UI)
 
-
 ---
 
 ## Dataset
 
-**Source:** FIFA 15 – FIFA 23 datasets  
+**Source:** FIFA 15 – FIFA 23 datasets
 
 ### Key Features Used
 - **Physical:** Pace, Strength, Stamina  
