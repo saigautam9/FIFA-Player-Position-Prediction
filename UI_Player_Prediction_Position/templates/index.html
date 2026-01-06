@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Position Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/static/image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 400px;
+            padding: 20px 30px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h2 {
+            color: #f2c94c;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Player Position Prediction</h2>
+        <form id="predictionForm" method="POST" action="/predict">
+            <label for="pace">Pace:</label>
+            <input type="number" step="0.1" id="pace" name="pace" placeholder="Enter pace score" required>
+
+            <label for="stamina">Stamina:</label>
+            <input type="number" step="0.1" id="stamina" name="stamina" placeholder="Enter stamina score" required>
+
+            <label for="shooting">Shooting:</label>
+            <input type="number" step="0.1" id="shooting" name="shooting" placeholder="Enter shooting score" required>
+
+            <label for="passing">Passing:</label>
+            <input type="number" step="0.1" id="passing" name="passing" placeholder="Enter passing score" required>
+
+            <label for="finishing">Finishing:</label>
+            <input type="number" step="0.1" id="finishing" name="finishing" placeholder="Enter finishing score" required>
+
+            <label for="defending">Defending:</label>
+            <input type="number" step="0.1" id="defending" name="defending" placeholder="Enter defending score" required>
+
+            <label for="tackling">Tackling:</label>
+            <input type="number" step="0.1" id="tackling" name="tackling" placeholder="Enter tackling score" required>
+
+            <button type="submit">Predict Position</button>
+        </form>
+
+        {% if position %}
+        <div class="result">
+            <strong>Predicted Position:</strong> {{ position }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
